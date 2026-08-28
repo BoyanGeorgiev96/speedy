@@ -1,43 +1,87 @@
 # Speedy
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/speedy`. To experiment with that code, run `bin/console` for an interactive prompt.
+Ruby client for the Speedy Bulgaria REST API. The structure mirrors the local `econt` gem: a Faraday client, resource classes for endpoint groups, and lightweight model objects with schema-backed attributes.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Add the gem from this repository:
 
-Install the gem and add to the application's Gemfile by executing:
-
-```bash
-bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+```ruby
+gem "speedy", path: "../speedy"
 ```
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+## Configuration
 
-```bash
-gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+```ruby
+Speedy::Client.configure do |config|
+  config.username = ENV.fetch("SPEEDY_USERNAME")
+  config.password = ENV.fetch("SPEEDY_PASSWORD")
+  config.language = "BG"
+end
 ```
+
+The default base URL is `https://api.speedy.bg/v1/`.
 
 ## Usage
 
-TODO: Write usage instructions here
+Calculate a delivery fee:
+
+```ruby
+client = Speedy::Client.instance
+
+calculations = client.calculate_delivery_fee(
+  recipient: { pickup_office_id: 123 },
+  service: { service_ids: [505] },
+  content: { parcels_count: 1, total_weight: 0.1 },
+  payment: { courier_service_payer: "SENDER" }
+)
+
+price = calculations.to_a.first.price
+price.total
+```
+
+Create a shipment and print labels:
+
+```ruby
+shipment = client.create_shipment(
+  service: { service_id: 505 },
+  content: { parcels_count: 1, total_weight: 0.1, contents: "Artwork", package: "PACKAGE" },
+  payment: { courier_service_payer: "SENDER" },
+  recipient: { pickup_office_id: 123 }
+)
+
+label_pdf = client.print_labels(
+  paper_size: "A6",
+  parcels: shipment.parcels.map { |parcel| { parcel_id: { id: parcel.id } } }
+)
+
+label_pdf.data
+```
+
+Find a city/site and offices:
+
+```ruby
+site = client.find_sites(country_id: 100, name: "София", post_code: "1000").to_a.first
+offices = client.find_offices(site_id: site.id)
+```
+
+Validate a personal delivery address:
+
+```ruby
+response = client.validate_address(
+  site_name: "София",
+  post_code: "1000",
+  street_name: "Витоша",
+  street_no: "1"
+)
+
+response.valid?
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Run the test suite with:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/speedy. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/speedy/blob/main/CODE_OF_CONDUCT.md).
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the Speedy project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/speedy/blob/main/CODE_OF_CONDUCT.md).
+```bash
+bundle exec rspec
+```
