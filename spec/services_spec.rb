@@ -221,6 +221,66 @@ RSpec.describe 'Speedy services' do
     expect(site.post_code).to eq('1000')
   end
 
+  it 'loads all sites through /location/site/csv/{countryId}' do
+    stubs.post('https://api.speedy.bg/v1/location/site/csv/100') do |env|
+      body = JSON.parse(env.body)
+
+      expect(body).to include(
+        'userName' => 'speedy-user',
+        'password' => 'speedy-pass',
+        'language' => 'BG'
+      )
+
+      [
+        200,
+        { 'Content-Type' => 'text/csv' },
+        "68134,100,0,гр.,gr.,София,SOFIA,Столична,STOLICHNA,София (столица),SOFIA CITY,1000,2,23.3219,42.6977,1111110,1,1\n"
+      ]
+    end
+
+    site = Speedy::Services::Location::Site.new(client: client).all(country_id: 100).to_a.first
+
+    expect(site.id).to eq(68_134)
+    expect(site.name).to eq('София')
+    expect(site.region).to eq('София (столица)')
+  end
+
+  it 'loads states through /location/state' do
+    stubs.post('https://api.speedy.bg/v1/location/state') do |env|
+      body = JSON.parse(env.body)
+
+      expect(body).to include(
+        'userName' => 'speedy-user',
+        'password' => 'speedy-pass',
+        'language' => 'BG',
+        'countryId' => 100
+      )
+
+      [
+        200,
+        { 'Content-Type' => 'application/json' },
+        {
+          states: [
+            {
+              id: 'SOF',
+              name: 'София (столица)',
+              nameEn: 'Sofia City',
+              stateAlpha: 'SF',
+              countryId: 100
+            }
+          ]
+        }.to_json
+      ]
+    end
+
+    state = Speedy::Services::Location::State.new(client: client).all(country_id: 100).to_a.first
+
+    expect(state.id).to eq('SOF')
+    expect(state.name).to eq('София (столица)')
+    expect(state.state_alpha).to eq('SF')
+    expect(state.country_id).to eq(100)
+  end
+
   it 'validates personal addresses through /validation/address' do
     stubs.post('https://api.speedy.bg/v1/validation/address') do |env|
       body = JSON.parse(env.body)

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'csv'
+
 module Speedy
   module Services
     module Location
@@ -29,15 +31,46 @@ module Speedy
           resource(response, Speedy::Models::Location::GetSiteResponse)
         end
 
-        # POST /location/site/all
-        def all
-          response = post('all')
+        # POST /location/site/csv/{countryId}
+        def all(country_id:)
+          response = post("csv/#{country_id}")
 
-          collection(response, Speedy::Models::Location::Site)
+          Speedy::Models::Location::Site.collection(csv_sites(response.body))
         end
 
         alias find_sites find
         alias get_site get
+
+        private
+
+        CSV_FIELDS = %i[
+          id
+          country_id
+          main_site_id
+          type
+          type_en
+          name
+          name_en
+          municipality
+          municipality_en
+          region
+          region_en
+          post_code
+          address_nomenclature
+          x
+          y
+          serving_days
+          serving_office_id
+          serving_hub_office_id
+        ].freeze
+
+        def csv_sites(body)
+          CSV.parse(body.to_s).filter_map do |row|
+            next if row.compact.empty? || row.first.to_s == 'id'
+
+            CSV_FIELDS.zip(row).to_h
+          end
+        end
       end
     end
   end

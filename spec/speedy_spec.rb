@@ -24,6 +24,7 @@ RSpec.describe Speedy do
     expect(client).to respond_to(:create_shipment)
     expect(client).to respond_to(:print_labels)
     expect(client).to respond_to(:find_sites)
+    expect(client).to respond_to(:all_states)
     expect(client).to respond_to(:find_offices)
     expect(client).to respond_to(:validate_address)
   end
