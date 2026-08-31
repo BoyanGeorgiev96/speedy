@@ -89,6 +89,10 @@ module Speedy
       Speedy::Services::Location::Site.new(client: self).find(**args)
     end
 
+    def all_states(**args)
+      Speedy::Services::Location::State.new(client: self).all(**args)
+    end
+
     def find_offices(**args)
       Speedy::Services::Location::Office.new(client: self).find(**args)
     end

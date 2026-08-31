@@ -25,6 +25,7 @@ module Speedy
     module Location
       autoload :Office, 'speedy/services/location/office'
       autoload :Site, 'speedy/services/location/site'
+      autoload :State, 'speedy/services/location/state'
     end
 
     module Validation
@@ -79,6 +80,7 @@ module Speedy
       autoload :Office, 'speedy/models/location/office'
       autoload :OfficeWorkingTimeSchedule, 'speedy/models/location/office_working_time_schedule'
       autoload :Site, 'speedy/models/location/site'
+      autoload :State, 'speedy/models/location/state'
     end
 
     module Validation
@@ -89,4 +91,5 @@ module Speedy
   Address = Models::Common::Address
   ShipmentAddress = Models::Shipments::ShipmentAddress
   Office = Models::Location::Office
+  State = Models::Location::State
 end
