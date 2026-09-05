@@ -41,8 +41,6 @@ module Speedy
         alias find_sites find
         alias get_site get
 
-        private
-
         CSV_FIELDS = %i[
           id
           country_id
@@ -63,6 +61,8 @@ module Speedy
           serving_office_id
           serving_hub_office_id
         ].freeze
+
+        private
 
         def csv_sites(body)
           CSV.parse(body.to_s).filter_map do |row|

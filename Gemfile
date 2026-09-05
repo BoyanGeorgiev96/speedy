@@ -5,9 +5,15 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in speedy.gemspec
 gemspec
 
-gem 'irb'
-gem 'rake', '~> 13.0'
+group :development do
+  gem 'irb'
+end
 
-gem 'rspec', '~> 3.0'
+group :development, :test do
+  gem 'rake'
+  gem 'rubocop'
+end
 
-gem 'rubocop', '~> 1.21'
+group :test do
+  gem 'rspec'
+end

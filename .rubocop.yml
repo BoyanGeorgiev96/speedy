@@ -1,6 +1,7 @@
 AllCops:
   TargetRubyVersion: 3.2
   NewCops: enable
+  SuggestExtensions: false
 
 Style/StringLiterals:
   EnforcedStyle: single_quotes
@@ -21,6 +22,10 @@ Metrics/ParameterLists:
   Max: 7
 
 Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+
+Layout/LineLength:
   Exclude:
     - "spec/**/*"
 
