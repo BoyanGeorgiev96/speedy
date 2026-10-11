@@ -12,22 +12,26 @@ on:
         default: false
         type: boolean
 
+permissions:
+  contents: read
+
 jobs:
   release:
     if: >-
       inputs.publish == true &&
       vars.RUBYGEMS_TRUSTED_PUBLISHING_ENABLED == 'true'
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     environment: release
     permissions:
       contents: write
       id-token: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           fetch-depth: 0
           persist-credentials: false
-      - uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@e81a8fa391b11a595c1b7ed84177cc0fe02faf83 # v1
         with:
           ruby-version: '4.0'
           bundler: '4.0.22'
@@ -38,4 +42,4 @@ jobs:
           bundle exec rake
           bundle exec rbs -r date -I sig validate
           bundle exec ruby script/package_smoke_test.rb
-      - uses: rubygems/release-gem@v1
+      - uses: rubygems/release-gem@7f9650160c1a4e7989fdc9855807bdbd421d8b6b # v1
