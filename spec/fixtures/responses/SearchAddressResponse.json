@@ -1,0 +1,14 @@
+{
+  "addresses": [
+    {
+      "text": "example text",
+      "coordX": 12.5,
+      "coordY": 12.5,
+      "microregionId": 7,
+      "distanceToSiteCenter": 12.5,
+      "actual": false,
+      "coordType": 7,
+      "additionalAddressProcessing": 7
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 7,
+  "specialDeliveryRequirements": {
+    "requiredForAllShipments": false,
+    "requirements": [
+      {
+        "id": 7,
+        "text": "example text"
+      }
+    ]
+  },
+  "cod": {
+    "moneyTransferAllowed": false,
+    "codFiscalReceiptAllowed": false,
+    "hasCODAnnex": false,
+    "internationalCODAnnexes": [
+      {
+        "countryId": 7,
+        "countryName": "example countryName"
+      }
+    ]
+  },
+  "administrativeFeeAllowed": false
+}

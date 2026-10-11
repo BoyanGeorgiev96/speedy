@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-12T10:30:00+03:00",
+  "docId": 7,
+  "docType": "CASH",
+  "paymentType": "CASH",
+  "payee": "example payee",
+  "currency": "example currency",
+  "amount": 12.5,
+  "details": [
+    {
+      "lineNo": 7,
+      "shipmentId": "7",
+      "pickupDate": "2026-10-12T10:30:00+03:00",
+      "primaryShipmentPickupDate": "2026-10-12T10:30:00+03:00",
+      "deliveryDate": "2026-10-12T10:30:00+03:00",
+      "sender": "example sender",
+      "recipient": "example recipient",
+      "note": "example note",
+      "ref1": "example ref1",
+      "ref2": "example ref2",
+      "currency": "example currency",
+      "order": 7,
+      "amount": 12.5
+    }
+  ]
+}

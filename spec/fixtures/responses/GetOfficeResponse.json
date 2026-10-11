@@ -1,0 +1,84 @@
+{
+  "office": {
+    "id": 7,
+    "name": "example name",
+    "nameEn": "example nameEn",
+    "siteId": 7,
+    "address": {
+      "countryId": 7,
+      "stateId": "7",
+      "siteId": 7,
+      "siteType": "example siteType",
+      "siteName": "example siteName",
+      "postCode": "example postCode",
+      "streetId": 7,
+      "streetType": "example streetType",
+      "streetName": "example streetName",
+      "streetNo": "example streetNo",
+      "complexId": 7,
+      "complexType": "example complexType",
+      "complexName": "example complexName",
+      "blockNo": "example blockNo",
+      "entranceNo": "example entranceNo",
+      "floorNo": "example floorNo",
+      "apartmentNo": "example apartmentNo",
+      "poiId": 7,
+      "addressNote": "example addressNote",
+      "addressLine1": "example addressLine1",
+      "addressLine2": "example addressLine2",
+      "x": 12.5,
+      "y": 12.5,
+      "fullAddressString": "example fullAddressString",
+      "siteAddressString": "example siteAddressString",
+      "localAddressString": "example localAddressString"
+    },
+    "workingTimeFrom": "example workingTimeFrom",
+    "workingTimeTo": "example workingTimeTo",
+    "workingTimeHalfFrom": "example workingTimeHalfFrom",
+    "workingTimeHalfTo": "example workingTimeHalfTo",
+    "workingTimeDayOffFrom": "example workingTimeDayOffFrom",
+    "workingTimeDayOffTo": "example workingTimeDayOffTo",
+    "sameDayDepartureCutoff": "example sameDayDepartureCutoff",
+    "sameDayDepartureCutoffHalf": "example sameDayDepartureCutoffHalf",
+    "sameDayDepartureCutoffDayOff": "example sameDayDepartureCutoffDayOff",
+    "maxParcelDimensions": {
+      "width": 7,
+      "height": 7,
+      "depth": 7
+    },
+    "maxParcelWeight": 12.5,
+    "type": "OFFICE",
+    "vendor": 7,
+    "nearbyOfficeId": 7,
+    "workingTimeSchedule": [
+      {
+        "date": "2026-10-12T10:30:00+03:00",
+        "workingTimeFrom": "example workingTimeFrom",
+        "workingTimeTo": "example workingTimeTo",
+        "sameDayDepartureCutoff": "example sameDayDepartureCutoff",
+        "standardSchedule": false
+      }
+    ],
+    "validFrom": "2026-10-12T10:30:00+03:00",
+    "validTo": "2026-10-12T10:30:00+03:00",
+    "cargoTypesAllowed": [
+      "PARCEL"
+    ],
+    "pickUpAllowed": false,
+    "dropOffAllowed": false,
+    "routingInformation": {
+      "tour": {
+        "number": 7,
+        "officeId": 8,
+        "ramp": "R1",
+        "cell": "C2"
+      },
+      "officeId": 9,
+      "hubId": 10,
+      "priority": 0
+    },
+    "palletOffice": false,
+    "cashPaymentAllowed": false,
+    "cardPaymentAllowed": false
+  }
+}

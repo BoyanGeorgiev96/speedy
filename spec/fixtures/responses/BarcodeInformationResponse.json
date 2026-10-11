@@ -1,0 +1,24 @@
+{
+  "labelInfo": {
+    "parcelId": "7",
+    "hubId": 7,
+    "officeId": 7,
+    "deadlineDay": 7,
+    "deadlineMonth": 7,
+    "tourId": 7,
+    "fullBarcode": "example fullBarcode",
+    "officeName": "example officeName",
+    "exportPriority": 7
+  },
+  "primaryShipment": {
+    "id": "7",
+    "type": "RETURN_SHIPMENT"
+  },
+  "primaryParcelId": "7",
+  "returnShipmentId": "7",
+  "returnParcelId": "7",
+  "redirectShipmentId": "7",
+  "redirectParcelId": "7",
+  "initialShipmentId": "7",
+  "initialParcelId": "7"
+}

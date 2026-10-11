@@ -1,0 +1,48 @@
+{
+  "services": [
+    {
+      "id": 7,
+      "name": "example name",
+      "nameEn": "example nameEn",
+      "additionalServices": {
+        "cod": {
+          "allowance": "FORBIDDEN"
+        },
+        "obpd": {
+          "allowance": "FORBIDDEN"
+        },
+        "declaredValue": {
+          "allowance": "FORBIDDEN"
+        },
+        "fixedTimeDelivery": {
+          "allowance": "FORBIDDEN"
+        },
+        "specialDelivery": {
+          "allowance": "FORBIDDEN"
+        },
+        "deliveryToFloor": {
+          "allowance": "FORBIDDEN"
+        },
+        "rod": {
+          "allowance": "FORBIDDEN"
+        },
+        "returnReceipt": {
+          "allowance": "FORBIDDEN"
+        },
+        "swap": {
+          "allowance": "FORBIDDEN"
+        },
+        "rop": {
+          "allowance": "FORBIDDEN"
+        },
+        "returnVoucher": {
+          "allowance": "FORBIDDEN"
+        }
+      },
+      "cargoType": "PARCEL",
+      "requireParcelWeight": false,
+      "requireParcelSize": false,
+      "deadline": "2026-10-12T10:30:00+03:00"
+    }
+  ]
+}

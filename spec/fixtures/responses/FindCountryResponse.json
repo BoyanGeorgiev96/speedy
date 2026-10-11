@@ -1,0 +1,31 @@
+{
+  "countries": [
+    {
+      "id": 7,
+      "name": "example name",
+      "nameEn": "example nameEn",
+      "isoAlpha2": "example isoAlpha2",
+      "isoAlpha3": "example isoAlpha3",
+      "currencyCode": "example currencyCode",
+      "requireState": false,
+      "addressType": 7,
+      "defaultOfficeId": 7,
+      "siteNomen": 7,
+      "streetTypes": [
+        {
+          "name": "example name",
+          "nameEn": "example nameEn"
+        }
+      ],
+      "complexTypes": [
+        {
+          "name": "example name",
+          "nameEn": "example nameEn"
+        }
+      ],
+      "postCodeFormats": [
+        "example postCodeFormats"
+      ]
+    }
+  ]
+}

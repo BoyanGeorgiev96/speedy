@@ -1,0 +1,6 @@
+--output-dir doc
+--readme README.md
+--title "Speedy Ruby API"
+lib/**/*.rb
+-
+docs/API.md

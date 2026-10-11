@@ -1,0 +1,16 @@
+{
+  "data": "JVBERi0xLjQK",
+  "printLabelsInfo": [
+    {
+      "parcelId": "7",
+      "hubId": 7,
+      "officeId": 7,
+      "deadlineDay": 7,
+      "deadlineMonth": 7,
+      "tourId": 7,
+      "fullBarcode": "example fullBarcode",
+      "officeName": "example officeName",
+      "exportPriority": 7
+    }
+  ]
+}

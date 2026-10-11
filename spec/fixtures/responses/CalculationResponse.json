@@ -1,0 +1,123 @@
+{
+  "calculations": [
+    {
+      "serviceId": 7,
+      "price": {
+        "amount": 12.5,
+        "vat": 12.5,
+        "total": 12.5,
+        "currency": "example currency",
+        "details": {
+          "netAmount": {
+            "amount": 12.5,
+            "percent": 12.5,
+            "vatPercent": 12.5
+          }
+        },
+        "amountLocal": 12.5,
+        "vatLocal": 12.5,
+        "totalLocal": 12.5,
+        "currencyLocal": "example currencyLocal",
+        "detailsLocal": {
+          "netAmount": {
+            "amount": 12.5,
+            "percent": 12.5,
+            "vatPercent": 12.5
+          }
+        },
+        "currencyExchangeRateUnit": 7,
+        "currencyExchangeRate": 12.5,
+        "returnAmounts": {
+          "moneyTransfer": {
+            "amount": 12.5,
+            "amountLocal": 12.5,
+            "payer": "SENDER"
+          }
+        }
+      },
+      "pickupDate": "2026-10-12T10:30:00+03:00",
+      "deliveryDeadline": "2026-10-12T10:30:00+03:00",
+      "deliveryDeadlineWorkDayType": null,
+      "additionalServices": {
+        "cod": {
+          "amount": 12.5,
+          "currencyCode": "example currencyCode",
+          "payoutToThirdParty": false,
+          "payoutToLoggedClient": false,
+          "processingType": "CASH",
+          "includeShippingPrice": false,
+          "cardPaymentForbidden": false,
+          "fiscalReceiptItems": [
+            {
+              "description": "example description",
+              "vatGroup": "example vatGroup",
+              "amount": 12.5,
+              "amountWithVat": 12.5
+            }
+          ]
+        },
+        "declaredValue": {
+          "amount": 12.5,
+          "fragile": false,
+          "ignoreIfNotApplicable": false
+        },
+        "fixedTimeDelivery": 7,
+        "returns": {
+          "rod": {
+            "enabled": false,
+            "comment": "example comment",
+            "returnToClientId": 7,
+            "returnToOfficeId": 7,
+            "thirdPartyPayer": false
+          },
+          "returnReceipt": {
+            "enabled": false,
+            "returnToClientId": 7,
+            "returnToOfficeId": 7,
+            "thirdPartyPayer": false
+          },
+          "electronicReturnReceipt": {
+            "recipientEmails": [
+              "example recipientEmails"
+            ],
+            "thirdPartyPayer": false,
+            "returnToClientId": 7,
+            "returnToOfficeId": 7
+          },
+          "swap": {
+            "serviceId": 7,
+            "parcelsCount": 7,
+            "declaredValue": 12.5,
+            "fragile": false,
+            "returnToClientId": 7,
+            "returnToOfficeId": 7,
+            "thirdPartyPayer": false
+          },
+          "rop": {
+            "pallets": [
+              {
+                "serviceId": 7,
+                "parcelsCount": 7
+              }
+            ],
+            "thirdPartyPayer": false
+          },
+          "returnVoucher": {
+            "serviceId": 7,
+            "payer": "SENDER",
+            "validityPeriod": 7,
+            "externalReturnVoucherId": "7"
+          },
+          "sendBackClientId": 7
+        },
+        "specialDeliveryId": 7,
+        "deliveryToFloor": 7,
+        "obpd": {
+          "option": "OPEN",
+          "returnShipmentServiceId": 7,
+          "returnShipmentPayer": "SENDER"
+        }
+      }
+    }
+  ]
+}

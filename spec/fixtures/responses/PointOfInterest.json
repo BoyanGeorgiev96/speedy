@@ -1,0 +1,12 @@
+{
+  "id": 7,
+  "siteId": 7,
+  "type": "example type",
+  "typeEn": "example typeEn",
+  "name": "example name",
+  "nameEn": "example nameEn",
+  "address": "example address",
+  "addressEn": "example addressEn",
+  "x": 12.5,
+  "y": 12.5
+}

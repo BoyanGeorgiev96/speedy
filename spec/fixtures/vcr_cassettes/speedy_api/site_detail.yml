@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.speedy.bg/v1/location/site/68134
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<SPEEDY_USERNAME>","password":"<SPEEDY_PASSWORD>"}'
+    headers:
+      User-Agent:
+      - SpeedyRubyClient/0.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Oct 2026 13:22:59 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a46d37c1deaa254b-SOF
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzaXRlIjp7ImlkIjo2ODEzNCwiY291bnRyeUlkIjoxMDAsIm1haW5TaXRlSWQiOjAsInR5cGUiOiLQs9GALiIsInR5cGVFbiI6ImdyLiIsIm5hbWUiOiLQodC+0YTQuNGPIiwibmFtZUVuIjoiU29maWEiLCJtdW5pY2lwYWxpdHkiOiLQodGC0L7Qu9C40YfQvdCwIiwibXVuaWNpcGFsaXR5RW4iOiJTdG9saWNobmEiLCJyZWdpb24iOiLQodC+0YTQuNGPICjRgdGC0L7Qu9C40YbQsCkiLCJyZWdpb25FbiI6IlNvZmlhIChzdG9saXRzYSkiLCJwb3N0Q29kZSI6IjEwMDAiLCJzZXJ2aW5nRGF5cyI6IjExMTExMTAiLCJhZGRyZXNzTm9tZW5jbGF0dXJlIjoxLCJ4IjoyMy4zMjA4MTksInkiOjQyLjY5NjgxMywic2VydmluZ09mZmljZUlkIjoyLCJzZXJ2aW5nSHViT2ZmaWNlSWQiOjJ9fQ==
+  recorded_at: Wed, 07 Oct 2026 13:22:59 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,795 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.speedy.bg/v1/shipment
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<SPEEDY_USERNAME>","password":"<SPEEDY_PASSWORD>","service":{"serviceId":505,"autoAdjustPickupDate":true},"content":{"parcelsCount":1,"totalWeight":0.1,"contents":"Automated
+        VCR contract fixture","package":"PACKAGE"},"payment":{"courierServicePayer":"SENDER"},"sender":{"clientId":<SPEEDY_SENDER_CLIENT_ID>},"recipient":{"clientName":"VCR
+        Contract Recipient","phone1":{"number":"+359888000099"},"privatePerson":true,"pickupOfficeId":2},"ref1":"speedy-bg-vcr-contract-fixture"}'
+    headers:
+      User-Agent:
+      - SpeedyRubyClient/0.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Oct 2026 10:40:45 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a48d3f9c4b77d0f6-SOF
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "<SPEEDY_CREATED_SHIPMENT_ID>",
+          "parcels": [
+            {
+              "id": "<SPEEDY_CREATED_SHIPMENT_ID>",
+              "seqNo": 1
+            }
+          ],
+          "pickupDate": "2026-10-12",
+          "price": {
+            "amount": 0,
+            "vat": 0.6,
+            "total": 3.59,
+            "currency": "EUR",
+            "details": {
+              "netAmount": {
+                "amount": 0,
+                "vatPercent": 0.2
+              },
+              "addressPickupSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "addressDeliverySurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "fixedDiscount": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "dropOffDiscount": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.0
+              },
+              "pickUpDiscount": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.0
+              },
+              "additionalDiscount": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "fuelSurcharge": {
+                "amount": 0,
+                "percent": 18.0,
+                "vatPercent": 0.2
+              },
+              "nonStandardDeliveryDateSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "administrativeFee": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "loadUnload": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "islandSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "optionsBeforePaymentSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "codPremium": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "heavyParcelSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "manualHandlingFee": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "addressNormalizationSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "tollSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "additionalPayZoneSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "insurancePremium": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "fillInFee": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "voucherDiscount": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.0
+              }
+            },
+            "amountLocal": 0,
+            "vatLocal": 0.6,
+            "totalLocal": 3.59,
+            "currencyLocal": "EUR",
+            "detailsLocal": {
+              "netAmount": {
+                "amount": 0,
+                "vatPercent": 0.2
+              },
+              "addressPickupSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "addressDeliverySurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "fixedDiscount": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "dropOffDiscount": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.0
+              },
+              "pickUpDiscount": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.0
+              },
+              "additionalDiscount": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "fuelSurcharge": {
+                "amount": 0,
+                "percent": 18.0,
+                "vatPercent": 0.2
+              },
+              "nonStandardDeliveryDateSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "administrativeFee": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "loadUnload": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "islandSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "optionsBeforePaymentSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "codPremium": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "heavyParcelSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "manualHandlingFee": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "addressNormalizationSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "tollSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "additionalPayZoneSurcharge": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "insurancePremium": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "fillInFee": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.2
+              },
+              "voucherDiscount": {
+                "amount": 0,
+                "percent": 0.0,
+                "vatPercent": 0.0
+              }
+            },
+            "currencyExchangeRateUnit": 1,
+            "currencyExchangeRate": 1.0
+          },
+          "deliveryDeadline": "2026-10-13T19:00:00+0300"
+        }
+  recorded_at: Sun, 11 Oct 2026 10:40:45 GMT
+- request:
+    method: post
+    uri: https://api.speedy.bg/v1/shipment/cancel
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<SPEEDY_USERNAME>","password":"<SPEEDY_PASSWORD>","shipmentId":"<SPEEDY_CREATED_SHIPMENT_ID>","comment":"Automated
+        VCR contract cleanup"}'
+    headers:
+      User-Agent:
+      - SpeedyRubyClient/0.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Oct 2026 10:40:45 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a48d3f9d887a3aea-SOF
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Sun, 11 Oct 2026 10:40:45 GMT
+- request:
+    method: post
+    uri: https://api.speedy.bg/v1/shipment/info
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<SPEEDY_USERNAME>","password":"<SPEEDY_PASSWORD>","shipmentIds":["<SPEEDY_CREATED_SHIPMENT_ID>"]}'
+    headers:
+      User-Agent:
+      - SpeedyRubyClient/0.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Oct 2026 10:40:45 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a48d3f9e2aedd0da-SOF
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "shipments": [
+            {
+              "id": "<SPEEDY_CREATED_SHIPMENT_ID>",
+              "sender": {
+                "clientId": 0,
+                "clientName": "<REDACTED>",
+                "contactName": "<REDACTED>",
+                "address": {
+                  "countryId": 0,
+                  "siteId": 0,
+                  "siteType": "гр.",
+                  "siteName": "<REDACTED>",
+                  "postCode": "<REDACTED>",
+                  "streetId": 0,
+                  "streetType": "<REDACTED>",
+                  "streetName": "<REDACTED>",
+                  "streetNo": "<REDACTED>",
+                  "addressNote": "<REDACTED>",
+                  "x": 23.392707,
+                  "y": 42.642021,
+                  "fullAddressString": "<REDACTED>",
+                  "siteAddressString": "<REDACTED>",
+                  "localAddressString": "<REDACTED>"
+                },
+                "email": "<REDACTED>",
+                "privatePerson": false,
+                "phones": [
+                  {
+                    "number": "<REDACTED>"
+                  }
+                ]
+              },
+              "recipient": {
+                "clientName": "<REDACTED>",
+                "address": {
+                  "countryId": 0,
+                  "siteId": 0,
+                  "siteType": "гр.",
+                  "siteName": "<REDACTED>",
+                  "postCode": "<REDACTED>",
+                  "streetId": 0,
+                  "streetType": "<REDACTED>",
+                  "streetName": "<REDACTED>",
+                  "streetNo": "<REDACTED>",
+                  "x": 23.392707,
+                  "y": 42.642021,
+                  "fullAddressString": "<REDACTED>",
+                  "siteAddressString": "<REDACTED>",
+                  "localAddressString": "<REDACTED>"
+                },
+                "privatePerson": true,
+                "phones": [
+                  {
+                    "number": "<REDACTED>"
+                  }
+                ],
+                "pickupOfficeId": 0,
+                "pickupGeoPUDOId": "<REDACTED>"
+              },
+              "service": {
+                "pickupDate": "2026-10-12",
+                "serviceId": 0,
+                "additionalServices": {
+                  "returns": {}
+                },
+                "deferredDays": 0,
+                "autoAdjustPickupDate": false
+              },
+              "content": {
+                "parcelsCount": 0,
+                "declaredWeight": 0.1,
+                "calculationWeight": 0.1,
+                "contents": "Automated VCR contract fixture",
+                "documents": false,
+                "palletized": false,
+                "parcels": [
+                  {
+                    "id": "<SPEEDY_CREATED_SHIPMENT_ID>",
+                    "seqNo": 1,
+                    "declaredSize": {
+                      "width": 0,
+                      "height": 0,
+                      "depth": 0
+                    },
+                    "measuredSize": {
+                      "width": 0,
+                      "height": 0,
+                      "depth": 0
+                    },
+                    "calculationSize": {
+                      "width": 0,
+                      "height": 0,
+                      "depth": 0
+                    },
+                    "declaredWeight": 0.1,
+                    "calculationWeight": 0.1,
+                    "externalCarrierParcelNumbers": []
+                  }
+                ],
+                "pendingParcels": false,
+                "package": "PACKAGE"
+              },
+              "payment": {
+                "courierServicePayer": "SENDER"
+              },
+              "ref1": "<REDACTED>",
+              "price": {
+                "amount": 0,
+                "vat": 0.0,
+                "total": 0.0,
+                "currency": "EUR",
+                "details": {
+                  "netAmount": {
+                    "amount": 0,
+                    "vatPercent": 0.2
+                  },
+                  "addressPickupSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "addressDeliverySurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "fixedDiscount": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "dropOffDiscount": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "pickUpDiscount": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "additionalDiscount": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "fuelSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "nonStandardDeliveryDateSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "administrativeFee": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "loadUnload": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "islandSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "optionsBeforePaymentSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "codPremium": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "heavyParcelSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "manualHandlingFee": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "addressNormalizationSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "tollSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "additionalPayZoneSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "insurancePremium": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "fillInFee": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "voucherDiscount": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  }
+                },
+                "amountLocal": 0,
+                "vatLocal": 0.0,
+                "totalLocal": 0.0,
+                "currencyLocal": "EUR",
+                "detailsLocal": {
+                  "netAmount": {
+                    "amount": 0,
+                    "vatPercent": 0.2
+                  },
+                  "addressPickupSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "addressDeliverySurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "fixedDiscount": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "dropOffDiscount": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "pickUpDiscount": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "additionalDiscount": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "fuelSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "nonStandardDeliveryDateSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "administrativeFee": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "loadUnload": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "islandSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "optionsBeforePaymentSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "codPremium": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "heavyParcelSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "manualHandlingFee": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "addressNormalizationSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "tollSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "additionalPayZoneSurcharge": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "insurancePremium": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "fillInFee": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  },
+                  "voucherDiscount": {
+                    "amount": 0,
+                    "percent": 0.0,
+                    "vatPercent": 0.2
+                  }
+                },
+                "currencyExchangeRateUnit": 1,
+                "currencyExchangeRate": 1.0
+              },
+              "delivery": {
+                "deadline": "2026-10-13T19:00:00+0300",
+                "deliveryDateTime": "<SPEEDY_CONTRACT_DATE>T13:40:45+0300"
+              },
+              "primaryShipment": {},
+              "pendingShipment": false
+            }
+          ]
+        }
+  recorded_at: Sun, 11 Oct 2026 10:40:45 GMT
+- request:
+    method: post
+    uri: https://api.speedy.bg/v1/track
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<SPEEDY_USERNAME>","password":"<SPEEDY_PASSWORD>","parcels":[{"id":"<SPEEDY_CREATED_SHIPMENT_ID>"}],"lastOperationOnly":false}'
+    headers:
+      User-Agent:
+      - SpeedyRubyClient/0.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Oct 2026 10:40:45 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a48d3f9ed9bcd0df-SOF
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "parcels": [
+            {
+              "parcelId": "<SPEEDY_CREATED_SHIPMENT_ID>",
+              "externalCarrierParcelNumbers": [],
+              "operations": [],
+              "externalCarrierParcelNumbersDetails": {}
+            }
+          ]
+        }
+  recorded_at: Sun, 11 Oct 2026 10:40:45 GMT
+recorded_with: VCR 6.4.0

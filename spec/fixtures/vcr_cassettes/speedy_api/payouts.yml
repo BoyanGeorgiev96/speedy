@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.speedy.bg/v1/payments
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<SPEEDY_USERNAME>","password":"<SPEEDY_PASSWORD>","fromDate":"<SPEEDY_CONTRACT_DATE>","toDate":"<SPEEDY_CONTRACT_DATE>","includeDetails":true}'
+    headers:
+      User-Agent:
+      - SpeedyRubyClient/0.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Oct 2026 13:22:59 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '31'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Content-Security-Policy-Report-Only:
+      - script-src 'unsafe-inline' 'unsafe-eval'; connect-src 'none'; report-uri https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report?m=Zo4VxzuUskgkNjUv4hlxBQfKXk6y3y9BbBs56BU7BqY-1791379379.2278764-1.0.1.1-i0D3H1VazJVj8_4nNgtPtv4qwYJzIdEPJLV.jQ_XdOBzDFBSXfXDY_pmTpoh7Q3FALbpnRHcLl_eDiGETadryWCkoVB.FMf3Uz0Y2LXFIiCuCRiayiNjqVtT39X3VTa2eve7pmdSzRlXwibZU54j7oh7JyXrB_lIpEqZ_3joIs0;
+        report-to cf-csp-endpoint
+      Report-To:
+      - '{"group":"cf-csp-endpoint","max_age":86400,"endpoints":[{"url":"https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report?m=Zo4VxzuUskgkNjUv4hlxBQfKXk6y3y9BbBs56BU7BqY-1791379379.2278764-1.0.1.1-i0D3H1VazJVj8_4nNgtPtv4qwYJzIdEPJLV.jQ_XdOBzDFBSXfXDY_pmTpoh7Q3FALbpnRHcLl_eDiGETadryWCkoVB.FMf3Uz0Y2LXFIiCuCRiayiNjqVtT39X3VTa2eve7pmdSzRlXwibZU54j7oh7JyXrB_lIpEqZ_3joIs0"}]}'
+      Reporting-Endpoints:
+      - cf-csp-endpoint="https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report?m=Zo4VxzuUskgkNjUv4hlxBQfKXk6y3y9BbBs56BU7BqY-1791379379.2278764-1.0.1.1-i0D3H1VazJVj8_4nNgtPtv4qwYJzIdEPJLV.jQ_XdOBzDFBSXfXDY_pmTpoh7Q3FALbpnRHcLl_eDiGETadryWCkoVB.FMf3Uz0Y2LXFIiCuCRiayiNjqVtT39X3VTa2eve7pmdSzRlXwibZU54j7oh7JyXrB_lIpEqZ_3joIs0"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a46d37c02c53c68a-SOF
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"payouts":[],"totalPayouts":0}'
+  recorded_at: Wed, 07 Oct 2026 13:22:59 GMT
+recorded_with: VCR 6.4.0

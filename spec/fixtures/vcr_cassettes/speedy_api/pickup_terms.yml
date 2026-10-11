@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.speedy.bg/v1/pickup/terms
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<SPEEDY_USERNAME>","password":"<SPEEDY_PASSWORD>","serviceId":505}'
+    headers:
+      User-Agent:
+      - SpeedyRubyClient/0.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Oct 2026 13:22:59 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a46d37c2c9483e98-SOF
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"cutoffs":["<SPEEDY_CONTRACT_DATE>T17:00:00+0300","2026-10-08T17:00:00+0300","2026-10-09T17:00:00+0300","2026-10-10T12:00:00+0300","2026-10-12T17:00:00+0300","2026-10-13T17:00:00+0300","2026-10-14T17:00:00+0300","2026-10-15T17:00:00+0300","2026-10-16T17:00:00+0300","2026-10-17T12:00:00+0300"]}'
+  recorded_at: Wed, 07 Oct 2026 13:22:59 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.speedy.bg/v1/location/site
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<SPEEDY_USERNAME>","password":"<SPEEDY_PASSWORD>","countryId":100,"name":"София","postCode":"1000"}'
+    headers:
+      User-Agent:
+      - SpeedyRubyClient/0.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Oct 2026 09:29:58 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a46be26e1b81d0c7-SOF
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzaXRlcyI6W3siaWQiOjY4MTM0LCJjb3VudHJ5SWQiOjEwMCwibWFpblNpdGVJZCI6MCwidHlwZSI6ItCz0YAuIiwidHlwZUVuIjoiZ3IuIiwibmFtZSI6ItCh0L7RhNC40Y8iLCJuYW1lRW4iOiJTb2ZpYSIsIm11bmljaXBhbGl0eSI6ItCh0YLQvtC70LjRh9C90LAiLCJtdW5pY2lwYWxpdHlFbiI6IlN0b2xpY2huYSIsInJlZ2lvbiI6ItCh0L7RhNC40Y8gKNGB0YLQvtC70LjRhtCwKSIsInJlZ2lvbkVuIjoiU29maWEgKHN0b2xpdHNhKSIsInBvc3RDb2RlIjoiMTAwMCIsInNlcnZpbmdEYXlzIjoiMTExMTExMCIsImFkZHJlc3NOb21lbmNsYXR1cmUiOjEsIngiOjIzLjMyMDgxOSwieSI6NDIuNjk2ODEzLCJzZXJ2aW5nT2ZmaWNlSWQiOjIsInNlcnZpbmdIdWJPZmZpY2VJZCI6Mn1dfQ==
+  recorded_at: Wed, 07 Oct 2026 09:29:58 GMT
+recorded_with: VCR 6.4.0

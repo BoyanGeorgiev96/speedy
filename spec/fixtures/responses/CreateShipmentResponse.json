@@ -1,0 +1,46 @@
+{
+  "id": "7",
+  "parcels": [
+    {
+      "id": "7",
+      "seqNo": 7,
+      "externalCarrierId": 7,
+      "externalCarrierParcelNumber": "7"
+    }
+  ],
+  "pickupDate": "2026-10-12T10:30:00+03:00",
+  "price": {
+    "amount": 12.5,
+    "vat": 12.5,
+    "total": 12.5,
+    "currency": "example currency",
+    "details": {
+      "netAmount": {
+        "amount": 12.5,
+        "percent": 12.5,
+        "vatPercent": 12.5
+      }
+    },
+    "amountLocal": 12.5,
+    "vatLocal": 12.5,
+    "totalLocal": 12.5,
+    "currencyLocal": "example currencyLocal",
+    "detailsLocal": {
+      "netAmount": {
+        "amount": 12.5,
+        "percent": 12.5,
+        "vatPercent": 12.5
+      }
+    },
+    "currencyExchangeRateUnit": 7,
+    "currencyExchangeRate": 12.5,
+    "returnAmounts": {
+      "moneyTransfer": {
+        "amount": 12.5,
+        "amountLocal": 12.5,
+        "payer": "SENDER"
+      }
+    }
+  },
+  "deliveryDeadline": "2026-10-12T10:30:00+03:00"
+}

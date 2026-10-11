@@ -1,0 +1,47 @@
+{
+  "clients": [
+    {
+      "clientId": 7,
+      "clientName": "example clientName",
+      "objectName": "example objectName",
+      "contactName": "example contactName",
+      "address": {
+        "countryId": 7,
+        "stateId": "7",
+        "siteId": 7,
+        "siteType": "example siteType",
+        "siteName": "example siteName",
+        "postCode": "example postCode",
+        "streetId": 7,
+        "streetType": "example streetType",
+        "streetName": "example streetName",
+        "streetNo": "example streetNo",
+        "complexId": 7,
+        "complexType": "example complexType",
+        "complexName": "example complexName",
+        "blockNo": "example blockNo",
+        "entranceNo": "example entranceNo",
+        "floorNo": "example floorNo",
+        "apartmentNo": "example apartmentNo",
+        "poiId": 7,
+        "addressNote": "example addressNote",
+        "addressLine1": "example addressLine1",
+        "addressLine2": "example addressLine2",
+        "x": 12.5,
+        "y": 12.5,
+        "fullAddressString": "example fullAddressString",
+        "siteAddressString": "example siteAddressString",
+        "localAddressString": "example localAddressString"
+      },
+      "email": "example email",
+      "privatePerson": false,
+      "phones": [
+        {
+          "number": "example number",
+          "extension": "example extension"
+        }
+      ],
+      "externalContactId": "7"
+    }
+  ]
+}

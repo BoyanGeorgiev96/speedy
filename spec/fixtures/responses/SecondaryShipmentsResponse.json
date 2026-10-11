@@ -1,0 +1,17 @@
+{
+  "shipments": [
+    {
+      "id": "7",
+      "type": "RETURN_SHIPMENT",
+      "parcels": [
+        {
+          "id": "7",
+          "seqNo": 7
+        }
+      ],
+      "pickupDate": "2026-10-12T10:30:00+03:00",
+      "serviceId": 7,
+      "hasScans": false
+    }
+  ]
+}

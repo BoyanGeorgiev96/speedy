@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.speedy.bg/v1/location/complex
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<SPEEDY_USERNAME>","password":"<SPEEDY_PASSWORD>","siteId":68134}'
+    headers:
+      User-Agent:
+      - SpeedyRubyClient/0.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Oct 2026 13:23:00 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a46d37c4dcf2a2bf-SOF
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb21wbGV4ZXMiOlt7ImlkIjo1MDIxLCJzaXRlSWQiOjY4MTM0LCJhY3R1YWxJZCI6MCwidHlwZSI6ItC/0LDRgNC6IiwidHlwZUVuIjoicGFyayIsIm5hbWUiOiIxMDAg0LPQvtC00LjQvdC4INCh0L7RhNC40Y8iLCJuYW1lRW4iOiIxMDAgZ29kaW5pIFNvZmlhIn0seyJpZCI6MjMyMzMsInNpdGVJZCI6NjgxMzQsImFjdHVhbElkIjowLCJ0eXBlIjoiIiwidHlwZUVuIjoiIiwibmFtZSI6Ijct0LzQuCAxMS3RgtC4INC60LjQu9C+0LzQtdGC0YrRgCIsIm5hbWVFbiI6IjctbWkgMTEtdGkga2lsb21ldGFyIn0seyJpZCI6NzgsInNpdGVJZCI6NjgxMzQsImFjdHVhbElkIjowLCJ0eXBlIjoi0LrQsi4iLCJ0eXBlRW4iOiJrdi4iLCJuYW1lIjoi0JDQsdC00L7QstC40YbQsCIsIm5hbWVFbiI6IkFiZG92aXRzYSJ9LHsiaWQiOjMwMCwic2l0ZUlkIjo2ODEzNCwiYWN0dWFsSWQiOjAsInR5cGUiOiIiLCJ0eXBlRW4iOiIiLCJuYW1lIjoi0JDQtdGA0L7Qs9Cw0YDQsNGC0LAiLCJuYW1lRW4iOiJBZXJvZ2FyYXRhIn0seyJpZCI6MTkzLCJzaXRlSWQiOjY4MTM0LCJhY3R1YWxJZCI6MCwidHlwZSI6ItCyLtC3LiIsInR5cGVFbiI6InYuei4iLCJuYW1lIjoi0JDQvNC10YDQuNC60LDQvdGB0LrQuCDQutC+0LvQtdC2IiwibmFtZUVuIjoiQW1lcmlrYW5za2kga29sZXpoIn0seyJpZCI6MTI0LCJzaXRlSWQiOjY4MTM0LCJhY3R1YWxJZCI6MCwidHlwZSI6IiIsInR5cGVFbiI6IiIsIm5hbWUiOiLQkdCQ0J0g0L3QsNGD0YfQtdC9INC60L7QvNC/0LvQtdC60YEiLCJuYW1lRW4iOiJCQU4gbmF1Y2hlbiBrb21wbGVrcyJ9LHsiaWQiOjIzMTk2LCJzaXRlSWQiOjY4MTM0LCJhY3R1YWxJZCI6MCwidHlwZSI6IiIsInR5cGVFbiI6IiIsIm5hbWUiOiLQkdCQ0J0g0L3QsNGD0YfQtdC9INC60L7QvNC/0LvQtdC60YEgMiIsIm5hbWVFbiI6IkJBTiBuYXVjaGVuIGtvbXBsZWtzIDIifSx7ImlkIjoxLCJzaXRlSWQiOjY4MTM0LCJhY3R1YWxJZCI6MCwidHlwZSI6ItC20LoiLCJ0eXBlRW4iOiJ6aGsiLCJuYW1lIjoi0JHQsNC90LjRiNC+0YDQsCIsIm5hbWVFbiI6IkJhbmlzaG9yYSJ9LHsiaWQiOjUwOTMsInNpdGVJZCI6NjgxMzQsImFjdHVhbElkIjowLCJ0eXBlIjoiIiwidHlwZUVuIjoiIiwibmFtZSI6ItCR0LDQvdGB0LrQsCDQs9GA0LDQtNC40L3QsCIsIm5hbWVFbiI6IkJhbnNrYSBncmFkaW5hIn0seyJpZCI6NDY3LCJzaXRlSWQiOjY4MTM0LCJhY3R1YWxJZCI6MCwidHlwZSI6ItC60LIuIiwidHlwZUVuIjoia3YuIiwibmFtZSI6ItCR0LDRgNC40YLQtSIsIm5hbWVFbiI6IkJhcml0ZSJ9XX0=
+  recorded_at: Wed, 07 Oct 2026 13:23:00 GMT
+recorded_with: VCR 6.4.0

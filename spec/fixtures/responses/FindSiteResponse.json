@@ -1,0 +1,24 @@
+{
+  "sites": [
+    {
+      "id": 7,
+      "countryId": 7,
+      "mainSiteId": 7,
+      "type": "example type",
+      "typeEn": "example typeEn",
+      "name": "example name",
+      "nameEn": "example nameEn",
+      "municipality": "example municipality",
+      "municipalityEn": "example municipalityEn",
+      "region": "example region",
+      "regionEn": "example regionEn",
+      "postCode": "example postCode",
+      "servingDays": "example servingDays",
+      "addressNomenclature": 7,
+      "x": 12.5,
+      "y": 12.5,
+      "servingOfficeId": 7,
+      "servingHubOfficeId": 7
+    }
+  ]
+}

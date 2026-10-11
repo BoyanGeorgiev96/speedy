@@ -1,0 +1,374 @@
+module Speedy
+  type scalar = bool | Integer | Float | String | nil
+  type request_value = scalar | Model | Array[request_value] | Hash[Symbol | String, request_value]
+  type request_hash = Hash[Symbol | String, request_value]
+  type response_value = scalar | Date | Array[response_value] | Hash[Symbol | String, response_value]
+  type response_hash = Hash[Symbol, response_value]
+
+  VERSION: String
+
+  class Error < StandardError
+    attr_reader status: Integer?
+    attr_reader error: Models::Error?
+    def initialize: (?String? message, ?error: Models::Error?, ?status: Integer?) -> void
+  end
+
+  class TransportError < Error
+  end
+
+  class ConnectionError < TransportError
+  end
+
+  class TimeoutError < TransportError
+  end
+
+  class SSLError < TransportError
+  end
+
+  class Collection[unchecked out Elem] < Object
+    include Enumerable[Elem]
+
+    attr_reader error: Models::Error?
+    def error?: () -> bool
+    def each: () { (Elem) -> void } -> void
+    def to_a: () -> Array[Elem]
+    def size: () -> Integer
+    def empty?: () -> bool
+  end
+
+  class Model
+    attr_reader error: Models::Error?
+    def error?: () -> bool
+    def to_h: () -> response_hash
+    def to_json: (*untyped) -> String
+  end
+
+  class Client
+    attr_accessor username: String?
+    attr_accessor password: String?
+    attr_accessor base_url: String
+    attr_accessor language: String?
+    attr_accessor client_system_id: Integer?
+    attr_accessor debug: bool
+    attr_accessor debug_bodies: bool
+    attr_accessor debug_logger: untyped
+    attr_accessor open_timeout: Numeric
+    attr_accessor read_timeout: Numeric
+    attr_accessor write_timeout: Numeric
+
+    def self.configure: () { (Client) -> void } -> Client
+    def self.connection: () -> untyped
+    def setup_connection!: () -> untyped
+    def credentials: () -> request_hash
+
+    def create_shipment: (**request_value) -> Models::Shipments::CreateShipmentResponse
+    def calculate_delivery: (**request_value) -> Collection[Models::Calculation::CalculationResult]
+    alias calculate_delivery_fee calculate_delivery
+    def shipment_info: (*String) -> Collection[Models::Shipments::Shipment]
+    def update_shipment: (id: String, **request_value) -> Models::Shipments::UpdateShipmentResponse
+    def update_shipment_properties: (id: String, **request_value) -> Models::Shipments::UpdateShipmentResponse
+    def cancel_shipment: (id: String, ?comment: String?) -> Models::Response
+    def finalize_shipment: (id: String) -> Models::Shipments::CreateShipmentResponse
+    def add_shipment_parcel: (shipment_id: String, parcel: request_hash, **request_value) -> Models::Shipments::CreatedShipmentParcel
+    def secondary_shipments: (shipment_id: String, ?types: Array[String]?) -> Collection[Models::Shipments::SecondaryShipment]
+    def find_parcels_by_reference: (ref: String, search_in_ref: Integer, **request_value) -> Array[String]
+    def hand_over_to_courier: (parcels: Array[request_hash]) -> Models::Response
+    def hand_over_to_midway_carrier: (parcels: Array[request_hash]) -> Models::Response
+    def barcode_information: (parcel: request_hash) -> Models::Shipments::BarcodeInformation
+    def track_shipments: (parcels: Array[request_hash], ?last_operation_only: bool?) -> Collection[Models::Tracking::TrackedParcel]
+    def bulk_tracking_files: (last_processed_file_id: Integer) -> Collection[Models::Tracking::BulkTrackingDataFile]
+    def courier_services: (?date: String?) -> Collection[Models::Services::CourierService]
+    def destination_services: (sender: request_hash, recipient: request_hash, ?date: String?) -> Collection[Models::Services::ExtendedCourierService]
+    def request_pickup: (**request_value) -> Collection[Models::Pickup::PickupOrder]
+    def pickup_terms: (service_id: Integer, **request_value) -> Models::Pickup::TermsResponse
+    def print_labels: (**request_value) -> Models::Print::ExtendedPrintResponse
+    def print_labels_pdf: (**request_value) -> String
+    def label_info: (**request_value) -> Models::Print::LabelInfoResponse
+    def print_voucher: (shipment_ids: Array[String], **request_value) -> String
+    def own_client_id: () -> Integer
+    def get_client: (Integer) -> Models::Clients::Client
+    def contract_clients: () -> Collection[Models::Clients::Client]
+    def create_contact: (**request_value) -> Integer
+    def contact_by_external_id: (id: String, secret_key: String) -> Models::Clients::Client
+    def contract_info: () -> Models::Clients::ContractInfo
+    def payouts: (from_date: String, to_date: String, ?include_details: bool?) -> Collection[Models::Payments::Payout]
+    def find_sites: (**request_value) -> Collection[Models::Location::Site]
+    def get_site: (Integer) -> Models::Location::GetSiteResponse
+    def get_state: (String) -> Models::Location::State
+    def find_states: (**request_value) -> Collection[Models::Location::State]
+    def all_states: (**request_value) -> Collection[Models::Location::State]
+    def all_countries: () -> Collection[Models::Location::Country]
+    def all_sites: (country_id: Integer) -> Collection[Models::Location::Site]
+    def all_streets: (country_id: Integer) -> Collection[Models::Location::Street]
+    def all_complexes: (country_id: Integer) -> Collection[Models::Location::Complex]
+    def all_blocks: (country_id: Integer) -> Collection[Models::Location::Block]
+    def all_points_of_interest: (country_id: Integer) -> Collection[Models::Location::PointOfInterest]
+    def all_postcodes: (country_id: Integer) -> Collection[Models::Location::Postcode]
+    def find_countries: (**request_value) -> Collection[Models::Location::Country]
+    def get_country: (Integer) -> Models::Location::Country
+    def find_streets: (**request_value) -> Collection[Models::Location::Street]
+    def get_street: (Integer) -> Models::Location::Street
+    def find_complexes: (**request_value) -> Collection[Models::Location::Complex]
+    def get_complex: (Integer) -> Models::Location::Complex
+    def find_blocks: (**request_value) -> Collection[Models::Location::Block]
+    def find_points_of_interest: (**request_value) -> Collection[Models::Location::PointOfInterest]
+    def get_point_of_interest: (Integer) -> Models::Location::PointOfInterest
+    def find_offices: (**request_value) -> Collection[Models::Location::Office]
+    def get_office: (Integer) -> Models::Location::GetOfficeResponse
+    def nearest_offices: (address: request_hash, **request_value) -> Collection[Models::Location::OfficeResult]
+    def validate_address: (request_hash | Models::Shipments::ShipmentAddress) -> Models::Validation::ValidationResponse
+    def validate_phone: (number: String, ?extension: String?) -> Models::Validation::ValidationResponse
+    def validate_post_code: (country_id: Integer, post_code: String, ?site_id: Integer?) -> Models::Validation::ValidationResponse
+    def validate_shipment: (**request_value) -> Models::Validation::ValidationResponse
+  end
+
+  module Models
+    class Response < Model
+    end
+
+    class Error < Model
+    end
+
+    module Shipments
+      class CreateShipmentResponse < Model
+        attr_reader id: String?
+        attr_reader parcels: Array[CreatedShipmentParcel]
+        attr_reader pickup_date: String?
+        attr_reader price: ShipmentPrice?
+        attr_reader delivery_deadline: String?
+      end
+      class UpdateShipmentResponse < CreateShipmentResponse
+      end
+      class Shipment < Model
+        attr_reader id: String?
+        attr_reader sender: Sender?
+        attr_reader recipient: Recipient?
+        attr_reader price: ShipmentPrice?
+        attr_reader pending_shipment: bool?
+      end
+      class SecondaryShipment < Model
+      end
+      class BarcodeInformation < Model
+      end
+      class CreatedShipmentParcel < Model
+        attr_reader id: String?
+        attr_reader seq_no: Integer?
+        attr_reader external_carrier_id: Integer?
+        attr_reader external_carrier_parcel_number: String?
+      end
+      class ShipmentAddress < Model
+      end
+      class ShipmentPrice < Model
+        attr_reader amount: Float?
+        attr_reader vat: Float?
+        attr_reader total: Float?
+        attr_reader currency: String?
+      end
+      class Sender < Model
+      end
+      class Recipient < Model
+      end
+      class ShipmentParcelSize < Model
+        attr_reader width: Integer?
+        attr_reader height: Integer?
+        attr_reader depth: Integer?
+      end
+      class ShipmentAdditionalServices < Model
+      end
+    end
+
+    module Tracking
+      class BulkTrackingDataFile < Model
+        attr_reader id: Integer?
+        attr_reader url: String?
+      end
+      class TrackedParcel < Model
+        attr_reader parcel_id: String?
+        attr_reader operations: Array[TrackedParcelOperation]
+        attr_reader external_carrier_parcel_numbers_details: Hash[String, ExternalCarrierParcelNumberDetails] | Array[untyped] | nil
+        attr_reader ref: String?
+        attr_reader track_phase: String?
+      end
+      class ExternalCarrierParcelNumberDetails < Model
+        attr_reader external_carrier_id: Integer?
+        attr_reader external_carrier_name: String?
+        attr_reader track_and_trace_url: String?
+      end
+      class TrackedParcelOperation < Model
+        attr_reader date_time: String?
+        attr_reader operation_code: Integer?
+        attr_reader place: String?
+        attr_reader description: String?
+        attr_reader comment: String?
+      end
+    end
+
+    module Pickup
+      class TermsResponse < Model
+        attr_reader cutoffs: Array[String]
+      end
+      class PickupOrder < Model
+        attr_reader id: Integer?
+        attr_reader shipment_ids: Array[String]
+        attr_reader pickup_period_from: String?
+        attr_reader pickup_period_to: String?
+      end
+    end
+
+    module Clients
+      class Client < Model
+      end
+      class ContractInfo < Model
+      end
+    end
+
+    module Payments
+      class Payout < Model
+        attr_reader doc_id: Integer?
+        attr_reader doc_type: String?
+        attr_reader payment_type: String?
+        attr_reader payee: String?
+        attr_reader currency: String?
+        attr_reader amount: Float?
+      end
+    end
+
+
+    module Calculation
+      class CalculationResult < Model
+        attr_reader service_id: Integer?
+        attr_reader price: Models::Shipments::ShipmentPrice?
+        attr_reader pickup_date: String?
+        attr_reader delivery_deadline: String?
+        attr_reader delivery_deadline_work_day_type: String?
+        attr_reader additional_services: Models::Shipments::ShipmentAdditionalServices?
+      end
+    end
+
+    module Print
+      class ExtendedPrintResponse < Model
+        attr_reader data: String?
+        attr_reader print_labels_info: Array[LabelInfo]
+      end
+      class LabelInfoResponse < Model
+        attr_reader print_labels_info: Array[LabelInfo]
+      end
+      class LabelInfo < Model
+        attr_reader parcel_id: String?
+        attr_reader hub_id: Integer?
+        attr_reader office_id: Integer?
+        attr_reader full_barcode: String?
+      end
+    end
+
+
+    module Services
+      class CourierService < Model
+        attr_reader additional_services: AdditionalCourierServices?
+        attr_reader id: Integer?
+        attr_reader name: String?
+        attr_reader name_en: String?
+        attr_reader cargo_type: String?
+        attr_reader require_parcel_weight: bool?
+        attr_reader require_parcel_size: bool?
+      end
+      class AdditionalCourierService < Model
+        attr_reader allowance: String?
+      end
+      class AdditionalCourierServices < Model
+        attr_reader cod: AdditionalCourierService?
+        attr_reader obpd: AdditionalCourierService?
+        attr_reader declared_value: AdditionalCourierService?
+        attr_reader fixed_time_delivery: AdditionalCourierService?
+        attr_reader special_delivery: AdditionalCourierService?
+        attr_reader delivery_to_floor: AdditionalCourierService?
+        attr_reader rod: AdditionalCourierService?
+        attr_reader return_receipt: AdditionalCourierService?
+        attr_reader swap: AdditionalCourierService?
+        attr_reader rop: AdditionalCourierService?
+        attr_reader return_voucher: AdditionalCourierService?
+      end
+      class ExtendedCourierService < CourierService
+        attr_reader deadline: String?
+      end
+    end
+
+    module Location
+      class Country < Model
+        attr_reader id: Integer?
+        attr_reader name: String?
+        attr_reader name_en: String?
+        attr_reader iso_alpha2: String?
+        attr_reader iso_alpha3: String?
+      end
+      class State < Model
+        attr_reader id: String?
+        attr_reader name: String?
+        attr_reader country_id: Integer?
+      end
+      class Site < Model
+        attr_reader id: Integer?
+        attr_reader name: String?
+        attr_reader post_code: String?
+      end
+      class Street < Model
+        attr_reader id: Integer?
+        attr_reader site_id: Integer?
+        attr_reader name: String?
+      end
+      class Complex < Model
+        attr_reader id: Integer?
+        attr_reader site_id: Integer?
+        attr_reader name: String?
+      end
+      class Block < Model
+        attr_reader site_id: Integer?
+        attr_reader name: String?
+      end
+      class PointOfInterest < Model
+        attr_reader id: Integer?
+        attr_reader site_id: Integer?
+        attr_reader name: String?
+      end
+      class Postcode < Model
+        attr_reader postcode: String?
+        attr_reader site_id: Integer?
+      end
+      class Office < Model
+        attr_reader id: Integer?
+        attr_reader name: String?
+        attr_reader site_id: Integer?
+        attr_reader max_parcel_dimensions: Models::Shipments::ShipmentParcelSize?
+        attr_reader routing_information: RoutingInformation?
+      end
+      class RoutingInformation < Model
+        attr_reader tour: Tour?
+        attr_reader office_id: Integer?
+        attr_reader hub_id: Integer?
+        attr_reader priority: Integer?
+      end
+      class Tour < Model
+        attr_reader number: Integer?
+        attr_reader office_id: Integer?
+        attr_reader ramp: String?
+        attr_reader cell: String?
+      end
+      class OfficeResult < Office
+        attr_reader distance: Integer?
+      end
+      class GetOfficeResponse < Model
+        attr_reader office: Office?
+      end
+      class GetSiteResponse < Model
+        attr_reader site: Site?
+      end
+    end
+
+    module Validation
+      class ValidationResponse < Model
+        attr_reader valid: bool?
+        def valid?: () -> bool?
+      end
+    end
+  end
+end

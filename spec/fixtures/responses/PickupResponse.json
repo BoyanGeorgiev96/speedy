@@ -1,0 +1,12 @@
+{
+  "orders": [
+    {
+      "id": 7,
+      "shipmentIds": [
+        "example shipmentIds"
+      ],
+      "pickupPeriodFrom": "2026-10-12T10:30:00+03:00",
+      "pickupPeriodTo": "2026-10-12T10:30:00+03:00"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.speedy.bg/v1/client/contract
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<SPEEDY_USERNAME>","password":"<SPEEDY_PASSWORD>"}'
+    headers:
+      User-Agent:
+      - SpeedyRubyClient/0.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Oct 2026 13:22:58 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a46d37bb2e99076f-SOF
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "clients": [
+            {
+              "clientId": 0,
+              "clientName": "<REDACTED>",
+              "objectName": "<REDACTED>",
+              "contactName": "<REDACTED>",
+              "address": {
+                "countryId": 0,
+                "siteId": 0,
+                "siteType": "гр.",
+                "siteName": "<REDACTED>",
+                "postCode": "<REDACTED>",
+                "streetId": 0,
+                "streetType": "<REDACTED>",
+                "streetName": "<REDACTED>",
+                "streetNo": "<REDACTED>",
+                "x": 23.399282,
+                "y": 42.641944,
+                "fullAddressString": "<REDACTED>",
+                "siteAddressString": "<REDACTED>",
+                "localAddressString": "<REDACTED>"
+              },
+              "email": "<REDACTED>",
+              "privatePerson": false,
+              "phones": [
+                {
+                  "number": "<REDACTED>"
+                }
+              ]
+            },
+            {
+              "clientId": 0,
+              "clientName": "<REDACTED>",
+              "objectName": "<REDACTED>",
+              "contactName": "<REDACTED>",
+              "address": {
+                "countryId": 0,
+                "siteId": 0,
+                "siteType": "гр.",
+                "siteName": "<REDACTED>",
+                "postCode": "<REDACTED>",
+                "streetId": 0,
+                "streetType": "<REDACTED>",
+                "streetName": "<REDACTED>",
+                "streetNo": "<REDACTED>",
+                "addressNote": "<REDACTED>",
+                "x": 23.392707,
+                "y": 42.642021,
+                "fullAddressString": "<REDACTED>",
+                "siteAddressString": "<REDACTED>",
+                "localAddressString": "<REDACTED>"
+              },
+              "email": "<REDACTED>",
+              "privatePerson": false,
+              "phones": [
+                {
+                  "number": "<REDACTED>"
+                }
+              ]
+            },
+            {
+              "clientId": 0,
+              "clientName": "<REDACTED>",
+              "objectName": "<REDACTED>",
+              "contactName": "<REDACTED>",
+              "address": {
+                "countryId": 0,
+                "siteId": 0,
+                "siteType": "гр.",
+                "siteName": "<REDACTED>",
+                "postCode": "<REDACTED>",
+                "streetId": 0,
+                "streetType": "<REDACTED>",
+                "streetName": "<REDACTED>",
+                "streetNo": "<REDACTED>",
+                "x": 26.016864,
+                "y": 43.872216,
+                "fullAddressString": "<REDACTED>",
+                "siteAddressString": "<REDACTED>",
+                "localAddressString": "<REDACTED>"
+              },
+              "email": "<REDACTED>",
+              "privatePerson": false,
+              "phones": [
+                {
+                  "number": "<REDACTED>"
+                }
+              ]
+            },
+            {
+              "clientId": 0,
+              "clientName": "<REDACTED>",
+              "objectName": "<REDACTED>",
+              "contactName": "<REDACTED>",
+              "address": {
+                "countryId": 0,
+                "siteId": 0,
+                "siteName": "<REDACTED>",
+                "postCode": "<REDACTED>",
+                "addressLine1": "<REDACTED>",
+                "x": 23.71622,
+                "y": 37.97945,
+                "fullAddressString": "<REDACTED>",
+                "siteAddressString": "<REDACTED>",
+                "localAddressString": "<REDACTED>"
+              },
+              "email": "<REDACTED>",
+              "privatePerson": false,
+              "phones": [
+                {
+                  "number": "<REDACTED>"
+                }
+              ]
+            },
+            {
+              "clientId": 0,
+              "clientName": "<REDACTED>",
+              "objectName": "<REDACTED>",
+              "contactName": "<REDACTED>",
+              "address": {
+                "countryId": 0,
+                "siteName": "<REDACTED>",
+                "postCode": "<REDACTED>",
+                "addressLine1": "<REDACTED>",
+                "addressLine2": "<REDACTED>",
+                "x": 52.17583,
+                "y": 20.93436,
+                "fullAddressString": "<REDACTED>",
+                "siteAddressString": "<REDACTED>",
+                "localAddressString": "<REDACTED>"
+              },
+              "email": "<REDACTED>",
+              "privatePerson": false,
+              "phones": [
+                {
+                  "number": "<REDACTED>"
+                }
+              ]
+            }
+          ]
+        }
+  recorded_at: Wed, 07 Oct 2026 13:22:58 GMT
+recorded_with: VCR 6.4.0

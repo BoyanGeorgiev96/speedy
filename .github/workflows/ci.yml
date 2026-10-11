@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby: ['3.3', '3.4', '4.0']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler: '4.0.22'
+          bundler-cache: true
+      - run: bundle exec rake
+      - name: Replay committed VCR contracts (network forbidden)
+        run: bundle exec rspec spec/recorded_contract_spec.rb
+        env:
+          SPEEDY_VCR_REPLAY: '1'
+      - run: bundle exec rbs -r date -I sig validate
+
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '4.0'
+          bundler: '4.0.22'
+          bundler-cache: true
+      - name: Check package metadata and release tag
+        run: bundle exec ruby script/check_release_tag.rb
+      - name: Build, install, and require the packaged gem
+        run: bundle exec ruby script/package_smoke_test.rb

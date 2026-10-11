@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.speedy.bg/v1/location/country
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<SPEEDY_USERNAME>","password":"<SPEEDY_PASSWORD>","isoAlpha2":"BG"}'
+    headers:
+      User-Agent:
+      - SpeedyRubyClient/0.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Oct 2026 09:23:02 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Content-Security-Policy-Report-Only:
+      - script-src 'unsafe-inline' 'unsafe-eval'; connect-src 'none'; report-uri https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report?m=AW3ZzeSgOjJbKR3c8jjA5XoStPghj2SApuG8Es7G6Zk-1791364982.47308-1.0.1.1-vM4xgm.QQNV2tF7aBtkhQ3XZiVv5Kw2UAGFpR2zoWazWVTPkiBC3lRqVjMh_YWOKP7PAKxERg6BHhZDFFu84KL.KGNWpkyD8dwFm2CYsDTgDXkIGueTnCxX1ftbFy9gAgmZVzYOD4zzH7jvGwGtYkzkNwRmTgEXyEXkxyhgpEl0;
+        report-to cf-csp-endpoint
+      Report-To:
+      - '{"group":"cf-csp-endpoint","max_age":86400,"endpoints":[{"url":"https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report?m=AW3ZzeSgOjJbKR3c8jjA5XoStPghj2SApuG8Es7G6Zk-1791364982.47308-1.0.1.1-vM4xgm.QQNV2tF7aBtkhQ3XZiVv5Kw2UAGFpR2zoWazWVTPkiBC3lRqVjMh_YWOKP7PAKxERg6BHhZDFFu84KL.KGNWpkyD8dwFm2CYsDTgDXkIGueTnCxX1ftbFy9gAgmZVzYOD4zzH7jvGwGtYkzkNwRmTgEXyEXkxyhgpEl0"}]}'
+      Reporting-Endpoints:
+      - cf-csp-endpoint="https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report?m=AW3ZzeSgOjJbKR3c8jjA5XoStPghj2SApuG8Es7G6Zk-1791364982.47308-1.0.1.1-vM4xgm.QQNV2tF7aBtkhQ3XZiVv5Kw2UAGFpR2zoWazWVTPkiBC3lRqVjMh_YWOKP7PAKxERg6BHhZDFFu84KL.KGNWpkyD8dwFm2CYsDTgDXkIGueTnCxX1ftbFy9gAgmZVzYOD4zzH7jvGwGtYkzkNwRmTgEXyEXkxyhgpEl0"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a46bd8447d3cd0e4-SOF
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb3VudHJpZXMiOlt7ImlkIjoxMDAsIm5hbWUiOiLQkdGK0LvQs9Cw0YDQuNGPIiwibmFtZUVuIjoiQnVsZ2FyaWEiLCJpc29BbHBoYTIiOiJCRyIsImlzb0FscGhhMyI6IkJHUiIsImN1cnJlbmN5Q29kZSI6IkVVUiIsInJlcXVpcmVTdGF0ZSI6ZmFsc2UsImFkZHJlc3NUeXBlIjoxLCJzaXRlTm9tZW4iOjEsInN0cmVldFR5cGVzIjpbeyJuYW1lIjoiIiwibmFtZUVuIjoiIn0seyJuYW1lIjoi0LHRg9C7LiIsIm5hbWVFbiI6ImJ1bC4ifSx7Im5hbWUiOiLRg9C7LiIsIm5hbWVFbiI6InVsLiJ9LHsibmFtZSI6ItC/0LsuIiwibmFtZUVuIjoicGwuIn0seyJuYW1lIjoi0LDQuy4iLCJuYW1lRW4iOiJhbC4ifSx7Im5hbWUiOiLQvNC+0YHRgiIsIm5hbWVFbiI6Im1vc3QifV0sImNvbXBsZXhUeXBlcyI6W3sibmFtZSI6IiIsIm5hbWVFbiI6IiJ9LHsibmFtZSI6ItC60LIuIiwibmFtZUVuIjoia3YuIn0seyJuYW1lIjoi0LwuIiwibmFtZUVuIjoibS4ifSx7Im5hbWUiOiLQttC6IiwibmFtZUVuIjoiemhrIn0seyJuYW1lIjoi0LzQsNGFLiIsIm5hbWVFbiI6Im1haC4ifSx7Im5hbWUiOiLQsi7Qty4iLCJuYW1lRW4iOiJ2LnouIn0seyJuYW1lIjoi0L/QsNGA0LoiLCJuYW1lRW4iOiJwYXJrIn0seyJuYW1lIjoi0L8u0LcuIiwibmFtZUVuIjoicC56LiJ9XSwicG9zdENvZGVGb3JtYXRzIjpbIiIsIk5OTk4iXX1dfQ==
+  recorded_at: Wed, 07 Oct 2026 09:23:02 GMT
+recorded_with: VCR 6.4.0

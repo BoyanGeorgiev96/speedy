@@ -1,0 +1,53 @@
+{
+  "parcels": [
+    {
+      "parcelId": "7",
+      "externalCarrierParcelNumbers": [
+        "example externalCarrierParcelNumbers"
+      ],
+      "operations": [
+        {
+          "dateTime": "2026-10-12T10:30:00+03:00",
+          "operationCode": 7,
+          "place": "example place",
+          "description": "example description",
+          "comment": "example comment",
+          "exceptionCodes": [
+            "example exceptionCodes"
+          ],
+          "returnShipmentId": "7",
+          "redirectShipmentId": "7",
+          "consignee": "example consignee",
+          "podImageURL": "example podImageURL",
+          "additionalInfo": {
+            "officeURL": "example officeURL",
+            "recipient": {
+              "countryId": 7,
+              "phone1": "example phone1",
+              "phone2": "example phone2",
+              "phone3": "example phone3"
+            },
+            "unsuccessfulDeliveryStickerImageURL": "example unsuccessfulDeliveryStickerImageURL",
+            "pickupOfficeType": "OFFICE",
+            "geoPUDOId": "7",
+            "predict": {
+              "predictedVisitDateTimeFrom": "2026-10-12T10:30:00+03:00",
+              "predictedVisitDateTimeTo": "2026-10-12T10:30:00+03:00",
+              "includedDelayInMinutes": 7,
+              "canceled": false
+            }
+          }
+        }
+      ],
+      "ref": "example ref",
+      "trackPhase": "HANDED_FOR_DELIVERY",
+      "externalCarrierParcelNumbersDetails": {
+        "netAmount": {
+          "externalCarrierId": 7,
+          "externalCarrierName": "example externalCarrierName",
+          "trackAndTraceUrl": "example trackAndTraceUrl"
+        }
+      }
+    }
+  ]
+}

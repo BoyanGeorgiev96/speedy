@@ -1,0 +1,41 @@
+name: Release to RubyGems
+
+# Deliberately manual and disabled by default. Publishing requires both an
+# explicit confirmation here and a matching pending/trusted publisher for this
+# workflow and the `release` environment on RubyGems.org.
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish the version in lib/speedy/version.rb
+        required: true
+        default: false
+        type: boolean
+
+jobs:
+  release:
+    if: >-
+      inputs.publish == true &&
+      vars.RUBYGEMS_TRUSTED_PUBLISHING_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '4.0'
+          bundler: '4.0.22'
+          bundler-cache: true
+      - name: Validate version and package
+        run: |
+          bundle exec ruby script/check_release_tag.rb "${GITHUB_REF_NAME}"
+          bundle exec rake
+          bundle exec rbs -r date -I sig validate
+          bundle exec ruby script/package_smoke_test.rb
+      - uses: rubygems/release-gem@v1
